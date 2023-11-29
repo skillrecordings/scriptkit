@@ -1,0 +1,66 @@
+{
+  "name": "@skillrecordings/feedback-widget",
+  "version": "0.0.3",
+  "description": "",
+  "license": "ISC",
+  "author": "Vojta Holik",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist/**/*"
+  ],
+  "scripts": {
+    "build": "tsc --jsx react-jsx --outDir dist & pnpm build:css",
+    "build:css": "copyfiles --flat ./src/styles.css ./dist/",
+    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
+    "dev": "tsc -w & pnpm watch:css",
+    "lint": "TIMING=1 eslint src --fix",
+    "test": "jest",
+    "watch:css": "pnpm build:css -w"
+  },
+  "jest": {
+    "preset": "@skillrecordings/scripts/jest/node",
+    "testEnvironment": "node"
+  },
+  "dependencies": {
+    "@heroicons/react": "^1.0.6",
+    "@radix-ui/react-dialog": "^0.1.7",
+    "@radix-ui/react-radio-group": "^1.1.1",
+    "@skillrecordings/skill-api": "workspace:*",
+    "@tiptap/extension-highlight": "^2.1.12",
+    "@tiptap/extension-link": "^2.1.12",
+    "@tiptap/extension-typography": "^2.1.12",
+    "@tiptap/react": "^2.1.12",
+    "@tiptap/starter-kit": "^2.1.12",
+    "classnames": "^2.3.1",
+    "formik": "2.2.9",
+    "yup": "^0.32.11"
+  },
+  "devDependencies": {
+    "@skillrecordings/scripts": "workspace:*",
+    "@skillrecordings/tsconfig": "workspace:*",
+    "@skillrecordings/types": "workspace:*",
+    "@tiptap/core": "^2.0.0-beta.181",
+    "@types/jest": "^29.5.1",
+    "@types/node": "^18.16.13",
+    "@types/react": "^18.2.6",
+    "@types/react-dom": "^18.2.4",
+    "copyfiles": "^2.4.1",
+    "esbuild-node-tsc": "^1.6.1",
+    "eslint": "^8.19.0",
+    "eslint-config-skill-recordings": "workspace:*",
+    "next": "^13.5.4",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "typescript": "5.1.6"
+  },
+  "peerDependencies": {
+    "lodash": "^4.17.21",
+    "next": ">= 11.1.2 < 13",
+    "react": "^17.0.2 < 18.0.0",
+    "react-dom": "^17.0.2 < 18.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

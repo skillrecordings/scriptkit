@@ -1,0 +1,18 @@
+.cueplayer-react {
+  .cueplayer-react-time-control {
+    display: flex;
+    align-items: center;
+    font-size: 1.3em;
+    line-height: 2.5rem;
+    min-width: 2em;
+    width: auto;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+
+  .cueplayer-react-time-divider {
+    line-height: 3em;
+    min-width: initial;
+    padding: 0;
+  }
+}

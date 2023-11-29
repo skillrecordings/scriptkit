@@ -1,0 +1,86 @@
+{
+  "name": "@skillrecordings/react",
+  "version": "1.0.2",
+  "description": "",
+  "license": "ISC",
+  "author": "Joel Hooks",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist/**/*"
+  ],
+  "scripts": {
+    "build": "tsc --jsx react-jsx --outDir dist & pnpm build:css",
+    "build:css": "sass --style expanded src/styles.css dist/styles.css",
+    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
+    "dev": "tsc -w & pnpm watch:css",
+    "lint": "TIMING=1 eslint src --fix",
+    "test": "jest",
+    "watch:css": "pnpm build:css -w"
+  },
+  "jest": {
+    "preset": "@skillrecordings/scripts/jest/node",
+    "testEnvironment": "node"
+  },
+  "dependencies": {
+    "@skillrecordings/ability": "1.0.0",
+    "@skillrecordings/analytics": "1.0.0",
+    "@skillrecordings/auth": "=0.0.6",
+    "@skillrecordings/axios": "=0.0.2",
+    "@skillrecordings/commerce-server": "1.0.1",
+    "@skillrecordings/config": "0.0.2",
+    "@skillrecordings/database": "1.0.1",
+    "@skillrecordings/next-seo": "1.0.1",
+    "axios": "^1.4.0",
+    "formik": "2.2.9",
+    "nprogress": "^0.2.0",
+    "prism-react-renderer": "^1.2.1",
+    "query-string": "^7.1.1",
+    "react-markdown": "^6.0.3",
+    "react-query": "^3.39.1",
+    "react-scroll": "^1.8.6",
+    "react-syntax-highlighter": "^15.4.4",
+    "react-use-clipboard": "^1.0.7",
+    "yup": "^0.32.11"
+  },
+  "devDependencies": {
+    "@skillrecordings/scripts": "workspace:*",
+    "@skillrecordings/tsconfig": "workspace:*",
+    "@skillrecordings/types": "workspace:*",
+    "@types/cookie": "^0.4.1",
+    "@types/jest": "^29.5.1",
+    "@types/lodash": "^4.14.179",
+    "@types/node": "^18.16.13",
+    "@types/nodemailer": "^6.4.4",
+    "@types/nprogress": "^0.2.0",
+    "@types/react": "^18.2.6",
+    "@types/react-dom": "^18.2.4",
+    "@types/react-syntax-highlighter": "^13.5.2",
+    "@xstate/react": "=1.5.1",
+    "esbuild-node-tsc": "^1.6.1",
+    "eslint": "^8.19.0",
+    "eslint-config-skill-recordings": "workspace:*",
+    "lodash": "^4.17.21",
+    "msw": "^0.35.0",
+    "next": "^13.5.4",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "sass": "^1.43.4",
+    "typescript": "5.1.6",
+    "xstate": "=4.23.1"
+  },
+  "peerDependencies": {
+    "@xstate/react": "=1.5.1",
+    "lodash": "^4.17.21",
+    "next": ">= 11.1.2 < 13",
+    "react": "^17.0.2 < 18.0.0",
+    "react-dom": "^17.0.2 < 18.0.0",
+    "xstate": "=4.23.1"
+  },
+  "transitivePeerDependencies": {
+    "sass": "^1.43.4"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

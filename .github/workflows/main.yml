@@ -1,0 +1,40 @@
+name: Lint and Test
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    name: Lint and Test
+    runs-on: ubuntu-latest
+
+    env: # Leverage Turborepo Remote Caching
+      TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+      TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
+      SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
+      DATABASE_URL: ${{ secrets.DATABASE_URL }}
+      PRISMA_SKIP_POSTINSTALL_GENERATE: false # We do this manually for architecture reasons
+
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v3
+
+      - name: PNPM Setup
+        uses: pnpm/action-setup@v2.2.4
+        with:
+          version: 8.7.0
+          run_install: false
+
+      - name: Node Setup
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18.16.0
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Test & Lint
+        run: pnpm -- turbo run test lint

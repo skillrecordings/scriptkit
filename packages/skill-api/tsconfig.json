@@ -1,0 +1,18 @@
+{
+  "compilerOptions":{
+    "lib": ["dom", "esnext"],
+    "module": "CommonJS",
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "jsx": "react",
+    "declaration": true,
+    "declarationDir": "./dist"
+  },
+  "extends": "@skillrecordings/tsconfig/base.json",
+  "include": [
+    "src/**/*",
+    "process.d.ts",
+    "next-auth.d.ts"
+  ],
+  "exclude": ["dist/**/*" ,"./*.js", "config", "generated", "**/__tests__", "node_modules"]
+}

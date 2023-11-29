@@ -1,0 +1,19 @@
+.turbo
+node_modules
+dist
+.idea
+.vercel
+.pnpm-debug.log
+.DS_Store
+tsconfig.tsbuildinfo
+.env
+
+# build artifacts
+apps/*/public/sitemap.xml
+apps/*/public/sitemap-[0-99].xml
+apps/*/public/robots.txt
+
+# test results
+apps/*/test-results
+
+.eslintcache

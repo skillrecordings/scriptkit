@@ -1,0 +1,15 @@
+.cueplayer-react .cueplayer-react-play-control {
+  cursor: pointer;
+  @include flex(none);
+  @extend .cueplayer-react-icon;
+
+  &.cueplayer-react-paused {
+    @extend .cueplayer-react-icon-play-arrow;
+  }
+  &.cueplayer-react-playing {
+    @extend .cueplayer-react-icon-pause;
+  }
+  &.cueplayer-react-ended {
+    @extend .cueplayer-react-icon-replay-30;
+  }
+}

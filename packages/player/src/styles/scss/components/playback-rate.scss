@@ -1,0 +1,12 @@
+.cueplayer-react .cueplayer-react-playback-rate {
+  @include display-flex(center);
+  font-size: 1.3em;
+  .cueplayer-react-playback-rate-button {
+    width: 2.5rem;
+    @include display-flex(center, center);
+  }
+  .cueplayer-react-playback-rate-value {
+    line-height: 2.5rem;
+    text-align: center;
+  }
+}

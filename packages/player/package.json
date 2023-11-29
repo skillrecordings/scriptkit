@@ -1,0 +1,81 @@
+{
+  "name": "@skillrecordings/player",
+  "version": "1.1.7",
+  "description": "Internal, shared utilities",
+  "author": "Joel Hooks",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist/**"
+  ],
+  "scripts": {
+    "build": "tsc && pnpm build:css",
+    "build:css": "sass --style expanded src/styles/scss/index.scss dist/skillrecordings-player.css",
+    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
+    "dev": "tsc -w & pnpm build:css -w",
+    "lint": "TIMING=1 eslint src --fix",
+    "test": "jest"
+  },
+  "jest": {
+    "preset": "@skillrecordings/scripts/jest/node",
+    "testEnvironment": "jsdom"
+  },
+  "dependencies": {
+    "@babel/core": "^7.16.5",
+    "@emotion/react": "^11.5.0",
+    "@radix-ui/react-dropdown-menu": "^1.0.0",
+    "@reach/slider": "^0.17.0",
+    "@reach/tabs": "^0.17.0",
+    "@skillrecordings/time": "^0.0.12",
+    "@tippyjs/react": "^4.2.6",
+    "classnames": "^2.3.1",
+    "hls.js": "1.1.5",
+    "js-cookie": "^3.0.1",
+    "prism-react-renderer": "^1.2.1",
+    "react-markdown": "^5.0.3",
+    "screenfull": "5.2.0"
+  },
+  "devDependencies": {
+    "@emotion/babel-plugin": "^11.3.0",
+    "@emotion/babel-preset-css-prop": "^11.2.0",
+    "@skillrecordings/scripts": "0.0.6",
+    "@skillrecordings/tsconfig": "0.0.6",
+    "@skillrecordings/types": "0.0.6",
+    "@testing-library/jest-dom": "^5.15.0",
+    "@testing-library/react": "^12.1.2",
+    "@types/cookie": "^0.4.1",
+    "@types/jest": "^29.5.1",
+    "@types/js-cookie": "^3.0.2",
+    "@types/lodash": "^4.14.179",
+    "@types/node": "^18.16.13",
+    "@types/nodemailer": "^6.4.4",
+    "@types/react": "^18.2.6",
+    "@types/react-dom": "^18.2.4",
+    "@xstate/react": "=1.5.1",
+    "assert": "^2.0.0",
+    "eslint": "^8.19.0",
+    "eslint-config-skill-recordings": "0.0.1",
+    "lodash": "^4.17.21",
+    "msw": "^0.35.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-test-renderer": "^17.0.2",
+    "sass": "^1.43.4",
+    "typescript": "5.1.6",
+    "xstate": "=4.23.1"
+  },
+  "peerDependencies": {
+    "@xstate/react": "^1.5.1 < 2",
+    "lodash": "^4.17.21",
+    "react": "^18.2.0 < 19.0.0",
+    "react-dom": "^17.0.2 < 18.0.0",
+    "xstate": "^4.23.1 > 5"
+  },
+  "transitivePeerDependencies": {
+    "sass": "^1.43.4"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "gitHead": "3398ceeb143d5fddcf11268741c2747856814119"
+}

@@ -1,0 +1,37 @@
+{
+  "name": "@skillrecordings/config",
+  "version": "0.0.3",
+  "description": "",
+  "license": "ISC",
+  "author": "Joel Hooks",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist/**"
+  ],
+  "scripts": {
+    "build": "tsc --jsx react-jsx --outDir dist",
+    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
+    "dev": "tsc -w",
+    "lint": "TIMING=1 eslint src --fix"
+  },
+  "devDependencies": {
+    "@skillrecordings/scripts": "workspace:*",
+    "@skillrecordings/tsconfig": "workspace:*",
+    "@skillrecordings/types": "workspace:*",
+    "@types/cookie": "^0.4.1",
+    "@types/jest": "^29.5.1",
+    "@types/lodash": "^4.14.179",
+    "@types/node": "^18.16.13",
+    "@types/nodemailer": "^6.4.4",
+    "@types/react": "^18.2.6",
+    "@types/react-dom": "^18.2.4",
+    "esbuild-node-tsc": "^1.6.1",
+    "eslint": "^8.19.0",
+    "eslint-config-skill-recordings": "workspace:*",
+    "typescript": "5.1.6"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "name": "@skillrecordings/products",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/skillrecordings/products/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/skillrecordings/products.git"
+  },
+  "license": "ISC",
+  "author": "Joel Hooks",
+  "main": "index.js",
+  "scripts": {
+    "build": "turbo run generate build postbuild",
+    "build:ci": "turbo run generate test lint",
+    "build:dev": "turbo run build test lint",
+    "changeset": "changeset",
+    "clean": "rm -rf node_modules && pnpm -r exec -- rm -rf .turbo node_modules .next dist",
+    "format": "pnpm run format:index && pnpm run format:src",
+    "format:index": "prettier --write \"*.{js,ts,json,md}\"",
+    "format:src": "prettier --write",
+    "generate": "turbo run generate",
+    "lint": "TIMING=1 eslint --fix --cache",
+    "manypkg": "manypkg",
+    "pre-commit": "lint-staged",
+    "prepare": "husky install",
+    "release": "changeset publish",
+    "release:canary": "changeset publish --tag canary",
+    "sort": "npx sort-package-json \"package.json\" \"packages/*/package.json\" \"apps/*/package.json\"",
+    "start": "turbo run start",
+    "test": "turbo run test",
+    "version:canary": "changeset version --snapshot canary"
+  },
+  "lint-staged": {
+    "**/*.{ts,tsx,js,jsx}": [
+      "pnpm run format",
+      "pnpm run lint"
+    ]
+  },
+  "prettier": {
+    "bracketSpacing": false,
+    "jsxBracketSameLine": false,
+    "printWidth": 80,
+    "semi": false,
+    "singleQuote": true,
+    "tabWidth": 2,
+    "trailingComma": "all",
+    "useTabs": false
+  },
+  "dependencies": {
+    "@changesets/changelog-github": "^0.2.8",
+    "@changesets/cli": "^2.26.1",
+    "@manypkg/cli": "^0.19.2",
+    "eslint": "^8.41.0",
+    "eslint-config-skill-recordings": "workspace:*",
+    "husky": "^7.0.4",
+    "lint-staged": "^11.2.6",
+    "plop": "^2.7.6",
+    "prettier": "^2.8.8",
+    "tsdx": "^0.14.1",
+    "turbo": "~1.10.13",
+    "typescript": "5.1.6"
+  },
+  "packageManager": "pnpm@8.9.0",
+  "manypkg": {
+    "ignoredRules": [
+      "INTERNAL_MISMATCH"
+    ]
+  }
+}

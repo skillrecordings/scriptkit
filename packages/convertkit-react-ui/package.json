@@ -1,0 +1,64 @@
+{
+  "name": "@skillrecordings/convertkit-react-ui",
+  "version": "0.0.3",
+  "description": "",
+  "license": "ISC",
+  "author": "Joel Hooks",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist/**"
+  ],
+  "scripts": {
+    "build": "tsc --jsx react-jsx --outDir dist",
+    "clean": "rm -rf .turbo && rm -rf node_modules && rm -rf dist",
+    "dev": "tsc -w",
+    "lint": "TIMING=1 eslint src --fix",
+    "test": "jest"
+  },
+  "jest": {
+    "preset": "@skillrecordings/scripts/jest/node"
+  },
+  "dependencies": {
+    "@reach/dialog": "^0.16.2",
+    "@skillrecordings/axios": "=0.0.2",
+    "@skillrecordings/config": "workspace:*",
+    "@skillrecordings/react": "workspace:*",
+    "axios": "^1.4.0",
+    "cookie": "^0.5.0",
+    "formik": "2.2.9",
+    "js-cookie": "^3.0.1",
+    "query-string": "^7.1.1",
+    "react-use": "^17.3.2",
+    "yup": "^0.32.11"
+  },
+  "devDependencies": {
+    "@skillrecordings/scripts": "workspace:*",
+    "@skillrecordings/tsconfig": "workspace:*",
+    "@skillrecordings/types": "workspace:*",
+    "@types/cookie": "^0.4.1",
+    "@types/jest": "^29.5.1",
+    "@types/js-cookie": "^3.0.2",
+    "@types/lodash": "^4.14.179",
+    "@types/node": "^18.16.13",
+    "@types/nodemailer": "^6.4.4",
+    "@types/react": "^18.2.6",
+    "@types/react-dom": "^18.2.4",
+    "@types/yup": "^0.29.13",
+    "esbuild-node-tsc": "^1.6.1",
+    "eslint": "^8.19.0",
+    "eslint-config-skill-recordings": "workspace:*",
+    "framer-motion": "^10.12.4",
+    "next": "^13.5.4",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "typescript": "5.1.6"
+  },
+  "peerDependencies": {
+    "framer-motion": "^10.12.4",
+    "next": ">= 11.1.2 < 13"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

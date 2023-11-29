@@ -1,0 +1,68 @@
+.cueplayer-react-listbox > button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  padding: 1px 10px 2px;
+  user-select: none;
+  @extend .cueplayer-react-control;
+  @extend .cueplayer-react-button;
+  @extend .cueplayer-react-menu-button;
+}
+
+[data-radix-popper-content-wrapper] {
+  overflow: hidden;
+  border: solid 1px hsla(0, 255%, 255%, 0.25);
+  @include border-radius(0.4em);
+  @include box-shadow(
+    0 0.5em 1em -0.5em $cueplayer-react-primary-background-color
+  );
+  @include background-color-with-alpha(
+    $cueplayer-react-primary-background-color,
+    1
+  );
+}
+
+.cueplayer-react-listbox {
+  z-index: 50;
+
+  [data-cueplayer-react-listbox] {
+    z-index: 50;
+    position: relative;
+  }
+
+  [data-radix-collection-item] {
+    padding: 3px 8px;
+    color: white;
+    font-weight: normal;
+    cursor: pointer;
+    font-size: 0.75em;
+  }
+
+  [data-radix-collection-item][data-state='checked'] {
+    font-weight: bold;
+    @include background-color-with-alpha(
+      $cueplayer-react-tertiary-foreground-color,
+      1
+    );
+  }
+
+  [data-radix-collection-item][data-disabled] {
+    opacity: 0.5;
+  }
+
+  [data-radix-collection-item][data-highlighted] {
+    @include background-color-with-alpha(
+      $cueplayer-react-tertiary-foreground-color,
+      0.5
+    );
+    transition: all ease-in-out 150ms;
+  }
+
+  .cueplayer-react-listbox-label {
+    color: white;
+    padding: 3px 8px;
+    font-size: 0.75em;
+    opacity: 0.9;
+  }
+}

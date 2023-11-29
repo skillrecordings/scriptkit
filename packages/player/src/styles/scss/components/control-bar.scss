@@ -1,0 +1,80 @@
+.cueplayer-react .cueplayer-react-control-bar {
+  display: flex;
+  flex-flow: row nowrap;
+  place-content: stretch flex-start;
+  align-items: center;
+  width: 100%;
+  height: 40px;
+  position: relative;
+  background: $cueplayer-react-primary-background-color;
+  .cueplayer-react-control {
+    height: 2.5rem;
+  }
+}
+
+.cueplayer-react:not(.cueplayer-react-cues-active)
+  .cueplayer-react-control-bar {
+  height: 48px;
+}
+
+// Video has started playing
+.cueplayer-react-has-started .cueplayer-react-control-bar {
+  @include display-flex;
+  visibility: visible;
+  opacity: 1;
+
+  $trans: visibility 0.6s, opacity 0.6s; // Var needed because of comma
+  @include transition($trans);
+}
+
+// Video has started playing AND user is inactive
+.cueplayer-react-has-started.cueplayer-react-user-inactive.cueplayer-react-playing {
+  .cueplayer-react-control-bar.cueplayer-react-control-bar-auto-hide {
+    // Remain visible for screen reader and keyboard users
+    visibility: visible;
+    opacity: 0;
+
+    $trans: visibility 0.6s, opacity 0.6s;
+    @include transition($trans);
+  }
+}
+
+.cueplayer-react-controls-disabled .cueplayer-react-control-bar,
+.cueplayer-react-using-native-controls .cueplayer-react-control-bar,
+.cueplayer-react-error .cueplayer-react-control-bar {
+  // !important is ok in this context.
+  display: none !important;
+}
+
+// Don't hide the control bar if it's audio
+.cueplayer-react-audio.cueplayer-react-has-started.cueplayer-react-user-inactive.cueplayer-react-playing
+  .cueplayer-react-control-bar {
+  opacity: 1;
+  visibility: visible;
+}
+
+// IE 8 + 9 Support
+.cueplayer-react-has-started.cueplayer-react-no-flex
+  .cueplayer-react-control-bar {
+  display: table;
+}
+
+.cueplayer-react-control-bar-left-part,
+.cueplayer-react-control-bar-center-part,
+.cueplayer-react-control-bar-right-part {
+  flex: 1 1 0%;
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+.cueplayer-react-control-bar-left-part {
+  place-content: stretch flex-start;
+}
+
+.cueplayer-react-control-bar-center-part {
+  place-content: stretch center;
+}
+
+.cueplayer-react-control-bar-right-part {
+  place-content: stretch flex-end;
+}

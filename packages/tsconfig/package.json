@@ -1,0 +1,15 @@
+{
+  "name": "@skillrecordings/tsconfig",
+  "version": "0.0.7",
+  "license": "BUSL-1.1",
+  "main": "index.js",
+  "files": [
+    "base.json",
+    "nextjs.json",
+    "lib-build.json"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "gitHead": "3398ceeb143d5fddcf11268741c2747856814119"
+}

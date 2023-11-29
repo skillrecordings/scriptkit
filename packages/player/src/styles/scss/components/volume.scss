@@ -1,0 +1,77 @@
+.cueplayer-react {
+  /*
+  Volume Container
+  */
+
+  .cueplayer-react-volume-control {
+    [data-reach-slider-input][data-orientation='horizontal'] {
+      height: 0.15rem;
+    }
+
+    [data-reach-slider-handle] {
+      width: 10px;
+      height: 10px;
+      border-radius: 5px;
+    }
+  }
+
+  /*
+  Volume Button
+  */
+  .cueplayer-react-volume {
+    @include display-flex(center);
+  }
+
+  .cueplayer-react-mute-control,
+  .cueplayer-react-volume-menu-button {
+    align-self: stretch;
+    font-size: 0.85em;
+    cursor: pointer;
+    @include flex(none);
+    @extend .cueplayer-react-icon;
+    @extend .cueplayer-react-icon-volume-up;
+
+    &.cueplayer-react-vol-0 {
+      @extend .cueplayer-react-icon-volume-mute;
+    }
+
+    &.cueplayer-react-vol-1 {
+      @extend .cueplayer-react-icon-volume-down;
+    }
+
+    &.cueplayer-react-vol-2 {
+      @extend .cueplayer-react-icon-volume-down;
+    }
+
+    &.cueplayer-react-vol-muted {
+      @extend .cueplayer-react-icon-volume-off;
+    }
+  }
+
+  /*
+  Volume Slider
+  */
+
+  .cueplayer-react-volume-bar {
+    width: 6em;
+    position: relative;
+    @include display-flex(center);
+
+    .cueplayer-react-volume-slider {
+      opacity: 0;
+      @include transition(opacity 0.2s ease-in-out);
+    }
+    .cueplayer-react-volume-slider-active {
+      @include transition(opacity 0.2s ease-in-out);
+      opacity: 1;
+    }
+  }
+
+  /* Enlarge interactive area of the slider */
+  .cueplayer-react-volume-bar::before {
+    width: 100%;
+    height: 2.5rem;
+    position: absolute;
+    content: '';
+  }
+}

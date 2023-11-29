@@ -1,0 +1,42 @@
+{
+  "name": "@skillrecordings/database",
+  "version": "1.0.3",
+  "license": "MIT",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist/**",
+    "prisma/**",
+    "src/**"
+  ],
+  "scripts": {
+    "prebuild": "pnpm run generate",
+    "build": "tsup",
+    "clean": "rimraf .turbo node_modules dist",
+    "db:push": "prisma db push",
+    "predev": "pnpm run generate",
+    "dev": "tsup --watch",
+    "format": "prisma format",
+    "generate": "DATABASE_URL=\"mysql://root@127.0.0.1:3306/turborepo\" prisma generate",
+    "lint": "eslint ./src --fix",
+    "validate": "DATABASE_URL=\"mysql://root@127.0.0.1:3306/turborepo\" npx prisma validate"
+  },
+  "dependencies": {
+    "@prisma/client": "^4.5.0",
+    "uuid": "^9.0.0"
+  },
+  "devDependencies": {
+    "@skillrecordings/tsconfig": "workspace:*",
+    "@types/node": "^18.16.13",
+    "@types/uuid": "^9.0.2",
+    "eslint": "^8.12.0",
+    "eslint-config-skill-recordings": "workspace:*",
+    "i": "^0.3.7",
+    "jest-mock-extended": "^3.0.4",
+    "prisma": "^5.2.0",
+    "rimraf": "^3.0.2",
+    "tsup": "^5.11.13",
+    "tsx": "^3.7.1",
+    "typescript": "5.1.6"
+  }
+}

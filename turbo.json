@@ -1,0 +1,57 @@
+{
+  "$schema": "https://turborepo.org/schema.json",
+  "baseBranch": "origin/main",
+  "pipeline": {
+    "prebuild": {
+      "dependsOn": ["^build", "generate"],
+      "outputs": ["dist/**"]
+    },
+    "build": {
+      "dependsOn": ["^build", "^generate", "generate"],
+      "outputs": ["dist/**", ".next/**", "!.next/cache/**"]
+    },
+    "@skillrecordings/config#build": {
+      "dependsOn": ["^build", "generate"],
+      "env": ["CONVERTKIT_API_SECRET"],
+      "outputs": ["dist/**"]
+    },
+    "@skillrecordings/database#build": {
+      "cache": false,
+      "dependsOn": ["^build", "generate"],
+      "outputs": ["dist/**"]
+    },
+    "postbuild": {
+      "dependsOn": ["build"],
+      "outputs": ["public/sitemap.xml", "public/robots.txt"]
+    },
+    "test": {
+      "dependsOn": ["^build", "generate"]
+    },
+    "deploy": {
+      "dependsOn": ["generate", "build", "test", "lint"]
+    },
+    "generate": {
+      "dependsOn": ["^generate"],
+      "cache": false,
+      "outputs": []
+    },
+    "lint": {
+      "outputs": [],
+      "dependsOn": ["^build", "generate"]
+    },
+    "start": {
+      "dependsOn": ["^build"]
+    },
+    "integration": {
+      "outputs": [],
+      "dependsOn": ["^build"]
+    },
+    "dev": {
+      "dependsOn": ["^build"],
+      "cache": false
+    },
+    "clean": {
+      "cache": false
+    }
+  }
+}
