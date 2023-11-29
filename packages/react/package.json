@@ -25,8 +25,8 @@
   "dependencies": {
     "@skillrecordings/ability": "workspace:*",
     "@skillrecordings/analytics": "workspace:*",
-    "@skillrecordings/auth": "workspace:*",
-    "@skillrecordings/axios": "workspace:*",
+    "@skillrecordings/auth": "0.0.6",
+    "@skillrecordings/axios": "0.0.2",
     "@skillrecordings/commerce-server": "workspace:*",
     "@skillrecordings/config": "workspace:*",
     "@skillrecordings/database": "workspace:*",
