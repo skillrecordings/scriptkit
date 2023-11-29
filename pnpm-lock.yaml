@@ -1332,14 +1332,14 @@ importers:
         specifier: ^11.2.0
         version: 11.11.0(@babel/core@7.23.2)
       '@skillrecordings/scripts':
-        specifier: 0.0.6
-        version: 0.0.6(@babel/core@7.23.2)(@types/node@18.18.5)(typescript@5.1.6)
+        specifier: ^0.0.7
+        version: link:../scripts
       '@skillrecordings/tsconfig':
-        specifier: 0.0.6
-        version: 0.0.6
+        specifier: ^0.0.7
+        version: link:../tsconfig
       '@skillrecordings/types':
-        specifier: 0.0.6
-        version: 0.0.6
+        specifier: ^0.0.7
+        version: link:../types
       '@testing-library/jest-dom':
         specifier: ^5.15.0
         version: 5.17.0
@@ -1381,7 +1381,7 @@ importers:
         version: 8.51.0
       eslint-config-skill-recordings:
         specifier: 0.0.1
-        version: 0.0.1(@typescript-eslint/eslint-plugin@2.34.0)(eslint@8.51.0)(jest@29.7.0)(typescript@5.1.6)
+        version: 0.0.1(@typescript-eslint/eslint-plugin@2.34.0)(eslint@8.51.0)(jest@25.5.4)(typescript@5.1.6)
       lodash:
         specifier: ^4.17.21
         version: 4.17.21
@@ -10166,25 +10166,6 @@ packages:
       react-dom: 18.2.0(react@18.2.0)
     dev: false
 
-  /@skillrecordings/scripts@0.0.6(@babel/core@7.23.2)(@types/node@18.18.5)(typescript@5.1.6):
-    resolution: {integrity: sha512-3r2lqD9b2zFhcv0MqxvvvJ+PSx+PZSrSPHg13yve0vdyZyH2j4DK2CBpJqgn/opxyX41sYPLWCXCdTWWJim31g==}
-    hasBin: true
-    dependencies:
-      jest: 29.7.0(@types/node@18.18.5)(ts-node@10.9.1)
-      ts-jest: 29.1.1(@babel/core@7.23.2)(jest@29.7.0)(typescript@5.1.6)
-    transitivePeerDependencies:
-      - '@babel/core'
-      - '@jest/types'
-      - '@types/node'
-      - babel-jest
-      - babel-plugin-macros
-      - esbuild
-      - node-notifier
-      - supports-color
-      - ts-node
-      - typescript
-    dev: true
-
   /@skillrecordings/stripe-sdk@1.0.2:
     resolution: {integrity: sha512-nTL50uolJaqtVX0cSzIif+XFNBWpSfA2/a5Kp6ogjK9qFUdfi1WclUBw/SVUZcEXllvXj4OXwc98yeECZR2iCw==}
     dependencies:
@@ -10204,17 +10185,9 @@ packages:
     resolution: {integrity: sha512-buWxeiW18CnZDLZBue6zVaEtwBsh8kNvpUC+0UWTHbDGKOCr4QrCehk9A55/NR5d1D2wmL5Vsfkt7x6g0dUxdA==}
     dev: true
 
-  /@skillrecordings/tsconfig@0.0.6:
-    resolution: {integrity: sha512-b+8ZB3CRLvc/2xQvY1cwOgrtStHVgC3IjJdyjlqpSTJXL7ZF9m6K45cPGluIZV/KwenARWjA/CaRyYYS7XUOKA==}
-    dev: true
-
   /@skillrecordings/types@0.0.5:
     resolution: {integrity: sha512-fWBj5hKs1lPGC0AJ8JPw/RWaNpagf5kU7t0fKdG0WqemN/c2dNchVwzjKtt3249VKpQVh53btZpZNLknPI2d6g==}
     dev: false
-
-  /@skillrecordings/types@0.0.6:
-    resolution: {integrity: sha512-8BpRIPrHzdFhIDizkrlv6zsA0AHkQJAQg5LiHNKddP7CSXSHB5EKJB8+c3LVWbCd506oTvzizDNsDTD99s/VBA==}
-    dev: true
 
   /@slack/logger@3.0.0:
     resolution: {integrity: sha512-DTuBFbqu4gGfajREEMrkq5jBhcnskinhr4+AnfJEk48zhVeEv3XnUKGIX98B74kxhYsIMfApGGySTn7V3b5yBA==}
@@ -13947,6 +13920,7 @@ packages:
     engines: {node: '>= 6'}
     dependencies:
       fast-json-stable-stringify: 2.1.0
+    dev: false
 
   /bser@2.1.1:
     resolution: {integrity: sha512-gQxTNE/GAfIIrmHLUE3oJyp5FO6HRBfhjnw4/wMmA63ZGDJnWBmgY/lyQBpnDUkGmAhbSe39tx2d/iTOAfglwQ==}
@@ -16863,11 +16837,11 @@ packages:
       - supports-color
     dev: true
 
-  /eslint-config-skill-recordings@0.0.1(@typescript-eslint/eslint-plugin@2.34.0)(eslint@8.51.0)(jest@29.7.0)(typescript@5.1.6):
+  /eslint-config-skill-recordings@0.0.1(@typescript-eslint/eslint-plugin@2.34.0)(eslint@8.51.0)(jest@25.5.4)(typescript@5.1.6):
     resolution: {integrity: sha512-fP+fgZdafCa1M3c6nMyOp+nLe9wQKBHhyVEStkfbiQ42ym8wb/UUvI0YbRMMlrX9UbNjQTzmkD8d2aLMs1i3Jw==}
     dependencies:
       eslint-config-prettier: 8.10.0(eslint@8.51.0)
-      eslint-plugin-jest: 26.5.3(@typescript-eslint/eslint-plugin@2.34.0)(eslint@8.51.0)(jest@29.7.0)(typescript@5.1.6)
+      eslint-plugin-jest: 26.5.3(@typescript-eslint/eslint-plugin@2.34.0)(eslint@8.51.0)(jest@25.5.4)(typescript@5.1.6)
       eslint-plugin-jsx-a11y: 6.7.1(eslint@8.51.0)
       eslint-plugin-react: 7.33.2(eslint@8.51.0)
       eslint-plugin-react-hooks: 4.6.0(eslint@8.51.0)
@@ -17136,29 +17110,6 @@ packages:
     transitivePeerDependencies:
       - supports-color
       - typescript
-    dev: false
-
-  /eslint-plugin-jest@26.5.3(@typescript-eslint/eslint-plugin@2.34.0)(eslint@8.51.0)(jest@29.7.0)(typescript@5.1.6):
-    resolution: {integrity: sha512-sICclUqJQnR1bFRZGLN2jnSVsYOsmPYYnroGCIMVSvTS3y8XR3yjzy1EcTQmk6typ5pRgyIWzbjqxK6cZHEZuQ==}
-    engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
-    peerDependencies:
-      '@typescript-eslint/eslint-plugin': ^5.0.0
-      eslint: ^6.0.0 || ^7.0.0 || ^8.0.0
-      jest: '*'
-    peerDependenciesMeta:
-      '@typescript-eslint/eslint-plugin':
-        optional: true
-      jest:
-        optional: true
-    dependencies:
-      '@typescript-eslint/eslint-plugin': 2.34.0(@typescript-eslint/parser@2.34.0)(eslint@8.51.0)(typescript@5.1.6)
-      '@typescript-eslint/utils': 5.62.0(eslint@8.51.0)(typescript@5.1.6)
-      eslint: 8.51.0
-      jest: 29.7.0(@types/node@18.18.5)(ts-node@10.9.1)
-    transitivePeerDependencies:
-      - supports-color
-      - typescript
-    dev: true
 
   /eslint-plugin-jsx-a11y@6.7.1(eslint@8.51.0):
     resolution: {integrity: sha512-63Bog4iIethyo8smBklORknVjB0T2dwB8Mr/hIC+fBS0uyHdYYpzM/Ed+YC8VxTjlXHEWFOdmgwcDn1U2L9VCA==}
@@ -29801,6 +29752,7 @@ packages:
       semver: 7.5.4
       typescript: 5.1.6
       yargs-parser: 21.1.1
+    dev: false
 
   /ts-mixer@6.0.3:
     resolution: {integrity: sha512-k43M7uCG1AkTyxgnmI5MPwKoUvS/bRvLvUb7+Pgpdlmok8AoqmUaZxUUw8zKM5B1lqZrt41GjYgnvAi0fppqgQ==}
