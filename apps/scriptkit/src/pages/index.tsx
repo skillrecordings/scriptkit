@@ -10,9 +10,11 @@ import Layout from 'layouts'
 import {
   getAllScripts,
   getLatestAppleSiliconRelease,
-  getLatestLinuxRelease,
-  getLatestRelease,
-  getLatestWindowsPreviewRelease,
+  getLatestLinuxarm64Release,
+  getLatestLinuxx64Release,
+  getLatestMacIntelRelease,
+  getLatestWindowsarm64Release,
+  getLatestWindowsx64Release,
 } from 'lib/get-user-scripts'
 import {getCourse} from 'lib/get-course'
 import {LoadedScript, Course, Testimonial as TestimonialType} from 'utils/types'
@@ -25,6 +27,7 @@ import Sponsors from 'components/sponsors'
 import Testimonial from 'components/testimonial'
 import SubscribeToConvertkitForm from 'components/subscribe-to-convertkit-form'
 import {Favicon} from 'components/logo'
+import Image from 'next/image'
 
 export type Release = {
   name: string
@@ -35,8 +38,10 @@ type HomeProps = {
   featuredScripts: LoadedScript[]
   macIntelRelease: Release
   macSilliconRelease: Release
-  windowsPreviewRelease: Release
-  linuxCommunityRelease: Release
+  windowsx64Release: Release
+  windowsarm64Release: Release
+  linuxx64Release: Release
+  linuxarm64Release: Release
   course: Course
   testimonials: TestimonialType[]
 }
@@ -72,8 +77,10 @@ const Home: FunctionComponent<React.PropsWithChildren<HomeProps>> = ({
   featuredScripts,
   macIntelRelease,
   macSilliconRelease,
-  windowsPreviewRelease,
-  linuxCommunityRelease,
+  windowsx64Release,
+  windowsarm64Release,
+  linuxx64Release,
+  linuxarm64Release,
   course,
   testimonials,
 }) => {
@@ -88,7 +95,7 @@ const Home: FunctionComponent<React.PropsWithChildren<HomeProps>> = ({
       <header className="sm:pt-10 pt-2 pb-10">
         <div className="flex items-center justify-center">
           <div className="w-full flex flex-col items-center justify-center text-center space-y-1">
-            <div className="pb-32 pt-8">
+            <div className="pb-24 pt-8">
               <h1 className="text-center lg:text-6xl sm:text-5xl text-4xl font-bold tracking-tight leading-tighter">
                 Shortcut to Everything
               </h1>
@@ -99,15 +106,23 @@ const Home: FunctionComponent<React.PropsWithChildren<HomeProps>> = ({
                 <DownloadKitApp
                   macIntelRelease={macIntelRelease}
                   macSilliconRelease={macSilliconRelease}
-                  windowsPreviewRelease={windowsPreviewRelease}
-                  linuxCommunityRelease={linuxCommunityRelease}
+                  windowsx64Release={windowsx64Release}
+                  windowsarm64Release={windowsarm64Release}
+                  linuxx64Release={linuxx64Release}
+                  linuxarm64Release={linuxarm64Release}
                 />
               </div>
             </div>
-            <div className="relative bg-gradient-to-tr from-fuchsia-500 via-rose-500 to-yellow-500 w-full flex flex-col items-center justify-center p-5 pb-12 rounded-xl max-w-3xl">
-              <div className="max-w-2xl h-full flex flex-col w-full relative z-20 md:-mt-24 -mt-20">
-                <div className="shadow-xl">
-                  <KitAppUI scripts={featuredScripts} />
+            <div className="relative bg-gradient-to-tr from-fuchsia-500 via-rose-500 to-yellow-500 w-full flex flex-col items-center justify-center p-5 rounded-xl max-w-3xl">
+              <div className="max-w-3xl h-full flex flex-col w-full relative z-20 md:-mt-24 -mt-20">
+                <div className="shadow-2xl">
+                  {/* <KitAppUI scripts={featuredScripts} /> */}
+                  {/* Dropping in a screenshot of v2 */}
+                  <Image
+                    src={require('../../public/kitapp-main-menu.png')}
+                    alt="John Lindquist"
+                    className="rounded-md w-full mt-8"
+                  />
                 </div>
               </div>
               <Lottie
@@ -307,10 +322,12 @@ const NewsletterSection = () => {
 }
 
 export async function getStaticProps(context: any) {
-  const macIntelRelease = await getLatestRelease()
+  const macIntelRelease = await getLatestMacIntelRelease()
   const macSilliconRelease = await getLatestAppleSiliconRelease()
-  const windowsPreviewRelease = await getLatestWindowsPreviewRelease()
-  const linuxCommunityRelease = await getLatestLinuxRelease()
+  const windowsx64Release = await getLatestWindowsx64Release()
+  const windowsarm64Release = await getLatestWindowsarm64Release()
+  const linuxx64Release = await getLatestLinuxx64Release()
+  const linuxarm64Release = await getLatestLinuxarm64Release()
   const showcaseCourse = await getCourse(
     'script-kit-showcase-for-optimizing-your-everyday-workflows-e20ceab4',
   )
@@ -333,8 +350,10 @@ export async function getStaticProps(context: any) {
       featuredScripts,
       macIntelRelease,
       macSilliconRelease,
-      windowsPreviewRelease,
-      linuxCommunityRelease,
+      windowsx64Release,
+      windowsarm64Release,
+      linuxx64Release,
+      linuxarm64Release,
       course: showcaseCourse,
       testimonials,
     },

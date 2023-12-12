@@ -17,13 +17,9 @@ const KitAppUI: React.FC<React.PropsWithChildren<Props>> = ({scripts}) => {
   const [hovered, setHovered] = React.useState<string>('')
 
   return (
-    <div className="bg-blur flex flex-col text-left h-full max-h-[400px] bg-opacity-[85%] bg-black border border-white border-opacity-5 rounded-lg flex-grow">
-      <header className="border-b border-white border-opacity-5">
+    <div className="bg-blur flex flex-col text-left h-full max-h-[400px] bg-opacity-[85%] bg-black border border-white/25 rounded-lg flex-grow">
+      <header className="border-b border-white/25">
         {/* top-bar */}
-        <div className="text-[0.6rem] uppercase font-mono p-3 pb-2 flex items-center justify-between">
-          <span>script kit</span>
-          {/* <span>main</span> */}
-        </div>
         {/* input */}
         <div className="flex items-center relative">
           <input
@@ -35,27 +31,6 @@ const KitAppUI: React.FC<React.PropsWithChildren<Props>> = ({scripts}) => {
           {/* blink */}
           <div className="bg-gray-200 animate-blink absolute w-px h-2/5 left-3 z-10" />
         </div>
-        {/* tabs */}
-        <nav className="pointer-events-none">
-          <ul className="flex items-center space-x-1">
-            {Array.of('Script', 'Kit', 'API', 'Guide', 'Community').map(
-              (tab, i) => {
-                let active = 0
-                return (
-                  <div
-                    className={`border-b-2 px-3 py-1 text-xs ${classNames({
-                      'border-yellow-500': i === active,
-                      'border-none opacity-80': i !== active,
-                    })}`}
-                    key={tab}
-                  >
-                    {tab}
-                  </div>
-                )
-              },
-            )}
-          </ul>
-        </nav>
       </header>
       <main className="flex flex-grow overflow-hidden">
         {/* scripts */}
@@ -67,7 +42,7 @@ const KitAppUI: React.FC<React.PropsWithChildren<Props>> = ({scripts}) => {
                   <Link
                     href={`/${script.user}/${script.command}`}
                     onMouseOver={() => setHovered(script.command)}
-                    className="flex flex-col px-3 py-2 bg-transparent bg-opacity-5 hover:bg-white hover:bg-opacity-5 group"
+                    className="flex flex-col px-3 py-2 bg-transparent bg-opacity-5 hover:bg-white hover:bg-opacity-5 group text-sm"
                   >
                     <div>{script.title}</div>
                     <p className="text-xs group-hover:text-yellow-500 group-hover:opacity-100 opacity-70">

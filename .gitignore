@@ -17,3 +17,5 @@ apps/*/public/robots.txt
 apps/*/test-results
 
 .eslintcache
+.env*.local
+.vscode

@@ -114,7 +114,7 @@ export async function getReleases() {
   return releases
 }
 
-export async function getLatestRelease() {
+export async function getLatestMacIntelRelease() {
   const releases = await getReleases()
 
   const mainRelease = releases.find(
@@ -125,8 +125,6 @@ export async function getLatestRelease() {
       release?.assets?.find((a) => a.name.includes('dmg')),
   )
 
-  console.log(`Mac Intel Main Release:`, mainRelease)
-
   const release = mainRelease?.assets.find(
     (asset) =>
       !asset?.name?.includes('beta') &&
@@ -135,7 +133,7 @@ export async function getLatestRelease() {
       asset?.name?.endsWith('.dmg'),
   )
 
-  console.log(`Mac Intel Release:`, release)
+  console.log(`Mac Intel Release:`, release?.name)
 
   return release
 }
@@ -153,8 +151,6 @@ export async function getLatestAppleSiliconRelease() {
       release?.assets?.find((a) => a.name.includes('dmg')),
   )
 
-  console.log(`Apple Silicon Main Release:`, mainRelease)
-
   const release = mainRelease?.assets.find(
     (asset) =>
       !asset?.name?.includes('beta') &&
@@ -163,12 +159,12 @@ export async function getLatestAppleSiliconRelease() {
       asset?.name?.endsWith('.dmg'),
   )
 
-  console.log(`Apple Silicon Release:`, release)
+  console.log(`Apple Silicon Release:`, release?.name)
 
   return release
 }
 
-export async function getLatestWindowsPreviewRelease() {
+export async function getLatestWindowsx64Release() {
   const releases = await getReleases()
 
   const mainRelease = releases.find(
@@ -178,8 +174,6 @@ export async function getLatestWindowsPreviewRelease() {
       !release.prerelease &&
       release?.assets?.find((a) => a.name.includes('exe')),
   )
-
-  console.log(`Windows Preview Main Release:`, mainRelease)
 
   const release = mainRelease?.assets.find(
     (asset) =>
@@ -189,12 +183,12 @@ export async function getLatestWindowsPreviewRelease() {
       asset?.name?.endsWith('.exe'),
   )
 
-  console.log(`Windows Releases:`, release)
+  console.log(`Windows x64 Release:`, release?.name)
 
   return release
 }
 
-export async function getLatestLinuxRelease() {
+export async function getLatestWindowsarm64Release() {
   const releases = await getReleases()
 
   const mainRelease = releases.find(
@@ -205,16 +199,63 @@ export async function getLatestLinuxRelease() {
       release?.assets?.find((a) => a.name.includes('exe')),
   )
 
-  console.log(`Linux Main Release:`, mainRelease)
+  const release = mainRelease?.assets.find(
+    (asset) =>
+      !asset?.name?.includes('beta') &&
+      !asset?.name?.includes('alpha') &&
+      asset?.name?.includes('arm') &&
+      asset?.name?.endsWith('.exe'),
+  )
+
+  console.log(`Windows ARM64 Release:`, release?.name)
+
+  return release
+}
+
+export async function getLatestLinuxx64Release() {
+  const releases = await getReleases()
+
+  const mainRelease = releases.find(
+    (release) =>
+      !release?.name?.includes('beta') &&
+      !release?.name?.includes('alpha') &&
+      !release.prerelease &&
+      release?.assets?.find((a) => a.name.includes('exe')),
+  )
 
   const release = mainRelease?.assets.find(
     (asset) =>
+      !asset?.name?.includes('arm') &&
       !asset?.name?.includes('beta') &&
       !asset?.name?.includes('alpha') &&
       asset?.name?.endsWith('AppImage'),
   )
 
-  console.log(`Linux Release:`, release)
+  console.log(`Linux x64 Release:`, release?.name)
+
+  return release
+}
+
+export async function getLatestLinuxarm64Release() {
+  const releases = await getReleases()
+
+  const mainRelease = releases.find(
+    (release) =>
+      !release?.name?.includes('beta') &&
+      !release?.name?.includes('alpha') &&
+      !release.prerelease &&
+      release?.assets?.find((a) => a.name.includes('exe')),
+  )
+
+  const release = mainRelease?.assets.find(
+    (asset) =>
+      asset?.name?.includes('arm') &&
+      !asset?.name?.includes('beta') &&
+      !asset?.name?.includes('alpha') &&
+      asset?.name?.endsWith('AppImage'),
+  )
+
+  console.log(`Linux ARM64 Release:`, release?.name)
 
   return release
 }

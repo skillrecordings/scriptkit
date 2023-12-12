@@ -6,14 +6,18 @@ const DownloadKitApp: React.FC<
   React.PropsWithChildren<{
     macIntelRelease: Release
     macSilliconRelease: Release
-    windowsPreviewRelease: Release
-    linuxCommunityRelease?: Release
+    windowsx64Release: Release
+    windowsarm64Release: Release
+    linuxx64Release: Release
+    linuxarm64Release: Release
   }>
 > = ({
   macIntelRelease,
   macSilliconRelease,
-  windowsPreviewRelease,
-  linuxCommunityRelease,
+  windowsx64Release,
+  windowsarm64Release,
+  linuxx64Release,
+  linuxarm64Release,
 }) => {
   const [isHovered, setIsHovered] = React.useState('')
   const macReleases = [
@@ -69,20 +73,38 @@ const DownloadKitApp: React.FC<
             <div className="flex items-center bg-gray-800">
               <div className="relative group flex 00">
                 <a
-                  onMouseOver={() => setIsHovered(windowsPreviewRelease.name)}
+                  onMouseOver={() => setIsHovered(windowsx64Release.name)}
                   onMouseOut={() => setIsHovered('')}
                   className={cx(
                     'font-normal tracking-tight flex items-center p-4 hover:bg-gray-700/50 transition',
                     {},
                   )}
-                  href={windowsPreviewRelease?.browser_download_url}
+                  href={windowsx64Release?.browser_download_url}
                   onMouseUp={(e) => {
                     e.preventDefault()
                     fetch('/api/update-twitter-count')
                   }}
                 >
                   <DownloadIcon className="flex-shrink-0 text-gray-500" />
-                  <span className="pl-1">x64 (Beta)</span>
+                  <span className="pl-1">x64</span>
+                </a>
+              </div>
+              <div className="relative group flex 00">
+                <a
+                  onMouseOver={() => setIsHovered(windowsarm64Release.name)}
+                  onMouseOut={() => setIsHovered('')}
+                  className={cx(
+                    'font-normal tracking-tight flex items-center p-4 hover:bg-gray-700/50 transition',
+                    {},
+                  )}
+                  href={windowsarm64Release?.browser_download_url}
+                  onMouseUp={(e) => {
+                    e.preventDefault()
+                    fetch('/api/update-twitter-count')
+                  }}
+                >
+                  <DownloadIcon className="flex-shrink-0 text-gray-500" />
+                  <span className="pl-1">arm64</span>
                 </a>
               </div>
             </div>
@@ -90,40 +112,62 @@ const DownloadKitApp: React.FC<
           <div className="absolute bottom-0 left-0 w-full translate-y-1.5 h-full rounded-xl from-gray-800 via-gray-900 to-gray-900 bg-gradient-to-r -z-10" />
         </div>
       </div>
-      {linuxCommunityRelease && (
-        <div className="relative">
-          <div className="inline-flex items-center gap-5 rounded-xl overflow-hidden bg-gray-900 text-white pl-4">
-            <div className="font-medium flex items-center gap-1">
-              <LinuxIcon /> Linux (Community)
+
+      <div className="relative">
+        <div className="inline-flex items-center gap-5 rounded-xl overflow-hidden bg-gray-900 text-white pl-4">
+          <div className="font-medium flex items-center gap-1">
+            <LinuxIcon /> Linux (Community)
+          </div>
+          <div className="flex items-center bg-gray-800">
+            <div className="relative group flex 00">
+              <a
+                onMouseOver={() =>
+                  setIsHovered(
+                    `Linux is community supported from contributors like you! (${linuxx64Release.name})`,
+                  )
+                }
+                onMouseOut={() => setIsHovered('')}
+                className={cx(
+                  'font-normal tracking-tight flex items-center p-4 hover:bg-gray-700/50 transition',
+                  {},
+                )}
+                href={linuxx64Release?.browser_download_url}
+                onMouseUp={(e) => {
+                  e.preventDefault()
+                  fetch('/api/update-twitter-count')
+                }}
+              >
+                <DownloadIcon className="flex-shrink-0 text-gray-500" />
+                <span className="pl-1">x64</span>
+              </a>
             </div>
-            <div className="flex items-center bg-gray-800">
-              <div className="relative group flex 00">
-                <a
-                  onMouseOver={() =>
-                    setIsHovered(
-                      `Linux is community supported from contributors like you! (${linuxCommunityRelease.name})`,
-                    )
-                  }
-                  onMouseOut={() => setIsHovered('')}
-                  className={cx(
-                    'font-normal tracking-tight flex items-center p-4 hover:bg-gray-700/50 transition',
-                    {},
-                  )}
-                  href={linuxCommunityRelease?.browser_download_url}
-                  onMouseUp={(e) => {
-                    e.preventDefault()
-                    fetch('/api/update-twitter-count')
-                  }}
-                >
-                  <DownloadIcon className="flex-shrink-0 text-gray-500" />
-                  <span className="pl-1">x64 (Beta)</span>
-                </a>
-              </div>
+            <div className="relative group flex 00">
+              <a
+                onMouseOver={() =>
+                  setIsHovered(
+                    `Linux is community supported from contributors like you! (${linuxarm64Release.name})`,
+                  )
+                }
+                onMouseOut={() => setIsHovered('')}
+                className={cx(
+                  'font-normal tracking-tight flex items-center p-4 hover:bg-gray-700/50 transition',
+                  {},
+                )}
+                href={linuxarm64Release?.browser_download_url}
+                onMouseUp={(e) => {
+                  e.preventDefault()
+                  fetch('/api/update-twitter-count')
+                }}
+              >
+                <DownloadIcon className="flex-shrink-0 text-gray-500" />
+                <span className="pl-1">arm64</span>
+              </a>
             </div>
           </div>
-          <div className="absolute bottom-0 left-0 w-full translate-y-1.5 h-full rounded-xl from-gray-800 via-gray-900 to-gray-900 bg-gradient-to-r -z-10" />
         </div>
-      )}
+        <div className="absolute bottom-0 left-0 w-full translate-y-1.5 h-full rounded-xl from-gray-800 via-gray-900 to-gray-900 bg-gradient-to-r -z-10" />
+      </div>
+
       <div className=" w-full text-center text-xs opacity-50 absolute md:-bottom-8 -bottom-12">
         {isHovered}
       </div>
