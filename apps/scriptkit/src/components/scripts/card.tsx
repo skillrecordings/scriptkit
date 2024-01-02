@@ -29,7 +29,7 @@ const ScriptCard: FunctionComponent<
             <div className="flex items-start px-6 pt-6">
               <div className="flex-grow">
                 <h2 className="md:text-2xl text-xl font-bold leading-tight">
-                  {script.command}
+                  {script.title}
                 </h2>
                 {withAuthor && (
                   <div className="flex space-x-2 font-xs text-sm opacity-70">
