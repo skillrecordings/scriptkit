@@ -188,6 +188,10 @@ const Home: FunctionComponent<React.PropsWithChildren<HomeProps>> = ({
               <ul>
                 <li className="pt-3">
                   <span className="pr-3 text-yellow-300 text-lg">▪︎</span>
+                  Write your scripts in TypeScript with our SDK. Zero config.
+                </li>
+                <li className="pt-3">
+                  <span className="pr-3 text-yellow-300 text-lg">▪︎</span>
                   Launch the prompt from anywhere as part of your flow
                 </li>
                 <li className="pt-3">
@@ -214,9 +218,9 @@ const Home: FunctionComponent<React.PropsWithChildren<HomeProps>> = ({
                 </li>
                 <li className="pt-3">
                   <span className="pr-3 text-yellow-300 text-lg">▪︎</span>
-                  Load npm libraries:{''}
+                  Watches your scripts and prompts to install npm libraries:{''}
                   <code className="whitespace-nowrap font-mono text-sm bg-yellow-500 bg-opacity-10 py-1 rounded-md text-yellow-300 px-2 ml-2">
-                    await npm("sharp")
+                    import express from "express"
                   </code>
                 </li>
                 <li className="pt-3">
@@ -337,10 +341,27 @@ export async function getStaticProps(context: any) {
 
   const scripts = await getAllScripts()
 
-  const featuredScripts = scripts.filter((s) => {
-    return selectedScripts.find(
-      (ss) => ss.user === s.user && ss.command === s.command,
+  const featuredScriptsSet = new Set(
+    selectedScripts.map((ss) => `${ss.user}/${ss.command}`),
+  )
+  const featuredScripts = []
+  for (const script of scripts) {
+    const scriptIdentifier = `${script.user}/${script.command}`
+    if (featuredScriptsSet.has(scriptIdentifier)) {
+      featuredScripts.push(script)
+      featuredScriptsSet.delete(scriptIdentifier) // Ensure uniqueness
+    }
+  }
+
+  // Sort featuredScripts by order in selectedScripts
+  featuredScripts.sort((a, b) => {
+    const aIndex = selectedScripts.findIndex(
+      (ss) => ss.user === a.user && ss.command === a.command,
     )
+    const bIndex = selectedScripts.findIndex(
+      (ss) => ss.user === b.user && ss.command === b.command,
+    )
+    return aIndex - bIndex
   })
 
   const testimonials = await getTestimonials()

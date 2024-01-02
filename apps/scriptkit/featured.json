@@ -1,26 +1,26 @@
 [
   {
+    "user": "kentcdodds",
+    "command": "new-post"
+  },
+  {
     "user": "johnlindquist",
     "command": "giphy-search"
   },
   {
+    "user": "laura-ok",
+    "command": "natural-language-shell-command"
+  },
+  {
+    "user": "mabry1985",
+    "command": "prompt-anywhere-v2"
+  },
+  {
+    "user": "kentcdodds",
+    "command": "extract-text-from-images"
+  },
+  {
     "user": "johnlindquist",
     "command": "image-resize"
-  },
-  {
-    "user": "johnlindquist",
-    "command": "center-app"
-  },
-  {
-    "user": "johnlindquist",
-    "command": "reddit"
-  },
-  {
-    "user": "johnlindquist",
-    "command": "book-search"
-  },
-  {
-    "user": "johnlindquist",
-    "command": "app-launcher"
   }
 ]
