@@ -51,7 +51,6 @@ export default TipsIndex
 
 const TipCard: React.FC<{tip: Tip}> = ({tip}) => {
   const {title} = tip
-  console.log('this is the tip info ', tip)
   const muxPlaybackId = tip?.muxPlaybackId
   const thumbnail = `https://image.mux.com/${muxPlaybackId}/thumbnail.png?width=720&height=405&fit_mode=preserve`
 
