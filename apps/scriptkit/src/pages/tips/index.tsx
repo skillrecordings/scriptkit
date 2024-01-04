@@ -26,7 +26,7 @@ const TipsIndex: React.FC<TipsIndex> = ({tips}) => {
   return (
     <Layout
       meta={{
-        title: `ScriptKit Tips by ${process.env.NEXT_PUBLIC_PARTNER_FIRST_NAME} ${process.env.NEXT_PUBLIC_PARTNER_LAST_NAME}`,
+        title: `Script Kit Tips by ${process.env.NEXT_PUBLIC_PARTNER_FIRST_NAME} ${process.env.NEXT_PUBLIC_PARTNER_LAST_NAME}`,
         description: pageDescription,
       }}
     >

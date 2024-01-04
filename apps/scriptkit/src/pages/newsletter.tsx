@@ -6,7 +6,7 @@ export default function Confirm() {
   return (
     <Layout
       withFooter={false}
-      meta={{title: 'Subscribe to ScriptKit'}}
+      meta={{title: 'Subscribe to Script Kit'}}
       className="flex items-center justify-center min-h-screen"
     >
       <main className="flex flex-col items-center justify-center max-w-screen-sm pb-24">

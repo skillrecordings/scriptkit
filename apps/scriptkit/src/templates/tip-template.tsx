@@ -116,7 +116,7 @@ const TipTemplate: React.FC<{
         ]}
         datePublished={tip._updatedAt || new Date().toISOString()}
         authorName={`${process.env.NEXT_PUBLIC_PARTNER_FIRST_NAME} ${process.env.NEXT_PUBLIC_PARTNER_LAST_NAME}`}
-        description={tip.description || 'ScriptKit Tip'}
+        description={tip.description || 'Script Kit Tip'}
       />
       <Layout
         meta={{
@@ -427,10 +427,10 @@ const SubscribeForm = ({
         >
           <MailIcon className="h-5 w-5 text-brand" />
         </div>{' '}
-        New ScriptKit tips delivered to your inbox
+        New Script Kit tips delivered to your inbox
       </div>
       <SubscribeToConvertkitForm
-        actionLabel="Subscribe for ScriptKit tips"
+        actionLabel="Subscribe for Script Kit tips"
         onSuccess={(subscriber, email) => {
           return handleOnSuccess(subscriber, email)
         }}

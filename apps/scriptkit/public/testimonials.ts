@@ -35,7 +35,7 @@ const Testimonials: Testimonial[] = [
     },
   },
   {
-    body: 'We are using ScriptKit to quickly automate tedious processes in our production pipeline and it’s awesome.',
+    body: 'We are using Script Kit to quickly automate tedious processes in our production pipeline and it’s awesome.',
     url: 'https://twitter.com/jhooks/status/1383457083547258887',
     created_at: new Date('04-17-2021'),
     author: {
@@ -46,7 +46,7 @@ const Testimonials: Testimonial[] = [
     },
   },
   {
-    body: 'Enjoying the updated design for ScriptKit by @johnlindquist. The fact that it is just JS scripts at the end of the day really motivating for automating frequent workflows',
+    body: 'Enjoying the updated design for Script Kit by @johnlindquist. The fact that it is just JS scripts at the end of the day really motivating for automating frequent workflows',
     url: 'https://twitter.com/lannonbr/status/1383199368841412609',
     created_at: new Date('04-17-2021'),
     author: {

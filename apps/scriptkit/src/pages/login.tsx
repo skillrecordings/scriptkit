@@ -44,11 +44,11 @@ const Login: React.FC<
   const githubProvider = providers.github
 
   return (
-    <Layout meta={{title: 'Log in to ScriptKit'}}>
+    <Layout meta={{title: 'Log in to Script Kit'}}>
       <div className="relative mx-auto flex w-full flex-grow flex-col items-center justify-center pb-16 pt-16 text-white sm:p-5 sm:pt-40 md:pb-40">
         <main className="relative z-10 rounded-lg border-gray-800 p-5 shadow-black/60 sm:mx-auto sm:border sm:bg-gray-800/90 sm:p-10 sm:shadow-2xl">
           <h1 className="pt-3 text-center font-text text-4xl font-extrabold leading-9 sm:pt-8 sm:text-4xl">
-            Log in to ScriptKit
+            Log in to Script Kit
           </h1>
           {query?.error === 'Verification' ? (
             <p className="max-w-sm pt-4 text-center sm:mx-auto sm:w-full sm:pt-8">

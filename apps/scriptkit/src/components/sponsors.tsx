@@ -6,7 +6,7 @@ const Sponsors = () => {
   return process.env.NEXT_PUBLIC_SPONSORSHIP_URL ? (
     <div className="flex flex-col items-center justify-center text-center pt-10 px-5">
       <span className="font-light text-lg opacity-80">
-        ScriptKit is made possible thanks to our sponsors
+        Script Kit is made possible thanks to our sponsors
       </span>
       <div className="flex flex-wrap justify-center gap-10 pt-8">
         {sponsorsData.map(({company, url, image}) => {
