@@ -4,6 +4,7 @@ const IMAGE_HOST_DOMAINS = [
   'res.cloudinary.com',
   'github.com',
   process.env.NEXT_PUBLIC_HOST,
+  `image.mux.com`,
 ]
 
 /**

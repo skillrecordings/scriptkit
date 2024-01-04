@@ -11,6 +11,7 @@ import {twMerge} from 'tailwind-merge'
 
 const navItems = [
   {name: 'Free Tutorials', href: '/tutorials'},
+  {name: 'Tips', href: '/tips'},
   {name: 'Community Scripts', href: '/scripts'},
   {name: 'Docs', href: 'https://github.com/johnlindquist/kit/blob/main/API.md'},
   {
