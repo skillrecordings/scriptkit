@@ -11,7 +11,7 @@ const Testimonials: Testimonial[] = [
     },
   },
   {
-    body: 'Just checked script kit out and it is freaking amazing!!! Thank you.',
+    body: 'Just checked Script Kit out and it is freaking amazing!!! Thank you.',
     url: 'https://twitter.com/raineycode/status/1381530751536144386?s=21',
     created_at: new Date('04-12-2021'),
     author: {
