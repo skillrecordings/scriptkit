@@ -13,11 +13,7 @@ const navItems = [
   {name: 'Free Tutorials', href: '/tutorials'},
   {name: 'Tips', href: '/tips'},
   {name: 'Community Scripts', href: '/scripts'},
-  {name: 'Docs', href: 'https://github.com/johnlindquist/kit/blob/main/API.md'},
-  {
-    name: 'Guide',
-    href: 'https://github.com/johnlindquist/kit/blob/main/GUIDE.md',
-  },
+  {name: 'Docs', href: 'https://johnlindquist.github.io/kit-docs/'},
   {
     name: 'Discuss',
     href: 'https://github.com/johnlindquist/kit/discussions',
