@@ -24,7 +24,7 @@ jobs:
       - name: PNPM Setup
         uses: pnpm/action-setup@v4
         with:
-          version: 8.7.0
+          version: 8.9.0
           run_install: false
 
       - name: Node Setup
