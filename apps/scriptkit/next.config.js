@@ -27,6 +27,15 @@ const nextConfig = {
 
     return config
   },
+  async redirects() {
+    return [
+      {
+        source: '/docs',
+        destination: 'https://johnlindquist.github.io/kit-docs/',
+        permanent: true,
+      },
+    ]
+  },
 }
 
 module.exports = withSvgr(nextConfig)

@@ -1,12 +1,13 @@
-import Image from 'next/legacy/image'
+import Image from 'next/image'
 
 const Logo = () => {
   return (
     <Image
-      src={require('../../public/assets/logo.png')}
+      src={require('../../public/assets/logo-v2.png')}
       quality={100}
       priority
       alt="Script Kit Logo"
+      height={32}
     />
   )
 }

@@ -9,13 +9,6 @@ const CourseWidget: React.FC<
   return (
     <div className="sm:grid grid-cols-2 bg-gradient-to-bl from-gray-900 to-gray-800 rounded-lg overflow-hidden">
       <div className="sm:p-8 p-5">
-        <img
-          src={image_thumb_url}
-          alt={title}
-          width={100}
-          height={100}
-          className="-m-3"
-        />
         <div className="sm:pt-8 pt-5">
           <p className="uppercase text-xs font-semibold pb-2 text-yellow-500">
             video course
