@@ -1,6 +1,6 @@
 import * as React from 'react'
 import {FunctionComponent} from 'react'
-import Lottie from 'react-lottie-player'
+import dynamic from 'next/dynamic'
 import Link from 'next/link'
 import {useRouter} from 'next/router'
 import {readFileSync} from 'fs'
@@ -28,6 +28,10 @@ import Testimonial from 'components/testimonial'
 import SubscribeToConvertkitForm from 'components/subscribe-to-convertkit-form'
 import {Favicon} from 'components/logo'
 import Image from 'next/image'
+
+const Lottie = dynamic(() => import('react-lottie-player'), {
+  ssr: false,
+})
 
 export type Release = {
   name: string
