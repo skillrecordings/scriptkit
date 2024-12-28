@@ -108,7 +108,34 @@ export async function getReleases() {
     page: 2,
   })
 
-  releases = [...releaseResponse1.data, ...releaseResponse2.data]
+  const releaseResponse3 = await octokit.repos.listReleases({
+    owner: 'johnlindquist',
+    repo: 'kitapp',
+    per_page: 100,
+    page: 3,
+  })
+
+  const releaseResponse4 = await octokit.repos.listReleases({
+    owner: 'johnlindquist',
+    repo: 'kitapp',
+    per_page: 100,
+    page: 4,
+  })
+
+  const releaseResponse5 = await octokit.repos.listReleases({
+    owner: 'johnlindquist',
+    repo: 'kitapp',
+    per_page: 100,
+    page: 5,
+  })
+
+  releases = [
+    ...releaseResponse1.data,
+    ...releaseResponse2.data,
+    ...releaseResponse3.data,
+    ...releaseResponse4.data,
+    ...releaseResponse5.data,
+  ]
   console.log(`Releases`, releases.length)
 
   return releases
