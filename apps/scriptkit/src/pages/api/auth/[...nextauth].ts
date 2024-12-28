@@ -16,6 +16,7 @@ const allowedCallbackDomains = [
   'localhost:3000',
   'localhost:3001',
   // Add a pattern for dynamic Vercel preview URLs
+  'script-generator-git-main-skillrecordings.vercel.app',
   'script-generator-*.vercel.app',
 ]
 
