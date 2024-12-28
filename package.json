@@ -10,6 +10,9 @@
   "license": "ISC",
   "author": "Joel Hooks",
   "main": "index.js",
+  "engines": {
+    "node": "16.20.0"
+  },
   "scripts": {
     "build": "turbo run generate build postbuild",
     "build:ci": "turbo run generate test lint",
