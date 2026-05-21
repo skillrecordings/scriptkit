@@ -92,7 +92,7 @@
     "mjml-react": "^2.0.8",
     "next": "^13.5.4",
     "next-auth": "^4.23.2",
-    "next-mdx-remote": "=4.4.1",
+    "next-mdx-remote": "^6.0.0",
     "nodemailer": "^6.7.2",
     "nodemailer-postmark-transport": "^5.2.1",
     "nprogress": "^0.2.0",
