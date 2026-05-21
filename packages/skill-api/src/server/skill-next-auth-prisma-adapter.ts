@@ -18,8 +18,8 @@ export function PrismaAdapter(p: PrismaClient): Adapter {
     // @ts-ignore
     updateUser: ({id, ...data}) => p.user.update({where: {id}, data}),
     deleteUser: (id) => p.user.delete({where: {id}}),
-    linkAccount: (data) => p.account.create({data}) as any,
-    unlinkAccount: (provider_providerAccountId) =>
+    linkAccount: (data: any) => p.account.create({data}) as any,
+    unlinkAccount: (provider_providerAccountId: any) =>
       p.account.delete({where: {provider_providerAccountId}}) as any,
     // @ts-ignore
     async getSessionAndUser(sessionToken) {
