@@ -54,8 +54,8 @@ importers:
         specifier: ^1.1.6
         version: 1.3.3
       '@code-hike/mdx':
-        specifier: ^0.8.2
-        version: 0.8.3(encoding@0.1.13)(react@18.2.0)
+        specifier: ^0.9.0
+        version: 0.9.0(encoding@0.1.13)(react@18.2.0)
       '@headlessui/react':
         specifier: ^1.7.1
         version: 1.7.17(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
@@ -2167,8 +2167,8 @@ importers:
         specifier: ^4.23.2
         version: 4.23.2(next@13.5.4(@babel/core@7.23.2)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(sass@1.69.3))(nodemailer@6.9.6)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       next-mdx-remote:
-        specifier: ^6.0.0
-        version: 6.0.0(@types/react@18.2.28)(react@18.2.0)
+        specifier: '=4.4.1'
+        version: 4.4.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       nodemailer:
         specifier: ^6.7.2
         version: 6.9.6
@@ -2654,8 +2654,8 @@ importers:
         specifier: ^4.23.2
         version: 4.23.2(next@13.5.4(@babel/core@7.23.2)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(sass@1.69.3))(nodemailer@6.9.6)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       next-mdx-remote:
-        specifier: ^6.0.0
-        version: 6.0.0(@types/react@18.2.28)(react@18.2.0)
+        specifier: '=4.2.0'
+        version: 4.2.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       nodemailer:
         specifier: ^6.7.2
         version: 6.9.6
@@ -3795,8 +3795,16 @@ packages:
   '@code-hike/lighter@0.6.4':
     resolution: {integrity: sha512-RGH/15WnFecNSPUxMVmbql0py25ijrhQlMtqkOSIgVZtmHxh00DkqImx65uL3dADFIzOa0RkN3ObUJWAppOgJQ==}
 
+  '@code-hike/lighter@0.7.0':
+    resolution: {integrity: sha512-64O07rIORKQLB+5T/GKAmKcD9sC0N9yHFJXa0Hs+0Aee1G+I4bSXxTccuDFP6c/G/3h5Pk7yv7PoX9/SpzaeiQ==}
+
   '@code-hike/mdx@0.8.3':
     resolution: {integrity: sha512-pbbv7PivrU+GqPiM0ufehNyhsoge8V25fx+y89M2yKgEWMAFnNkk4E1XaW/X81QzIq3h58IoKEWnNYSJpERTvA==}
+    peerDependencies:
+      react: ^16.8.3 || ^17 || ^18
+
+  '@code-hike/mdx@0.9.0':
+    resolution: {integrity: sha512-0wg68ZCjVWAkWT4gBUZJ8Mwktjen/XeWyqBQCrhA2IZSbZZnMYsEI6JJEFb/nZoNI3comB3JdxPLykZRq3qT2A==}
     peerDependencies:
       react: ^16.8.3 || ^17 || ^18
 
@@ -7010,6 +7018,9 @@ packages:
 
   '@types/js-levenshtein@1.1.1':
     resolution: {integrity: sha512-qC4bCqYGy1y/NP7dDVr7KJarn+PbX1nSpwA7JXdu0HxT3QYjO8MJ+cntENtHFVy2dRAyBV23OZ6MxsW1AM1L8g==}
+
+  '@types/js-yaml@4.0.9':
+    resolution: {integrity: sha512-k4MGaQl5TGo/iipqb2UDG2UwjXziSWkh0uysQelTlJpX1qGlpUZYm8PnO4DxG1qBomtJUdYJ6qR6xdIah10JLg==}
 
   '@types/jsdom@20.0.1':
     resolution: {integrity: sha512-d0r18sZPmMQr1eG35u12FZfhIXNrnsPU/g5wvRKCUf/tOGilKKwYMYGqh33BNR6ba+2gkHw1EUiHoN3mn7E5IQ==}
@@ -13278,6 +13289,20 @@ packages:
   next-compose-plugins@2.2.1:
     resolution: {integrity: sha512-OjJ+fV15FXO2uQXQagLD4C0abYErBjyjE0I0FHpOEIB8upw0hg1ldFP6cqHTJBH1cZqy96OeR3u1dJ+Ez2D4Bg==}
 
+  next-mdx-remote@4.2.0:
+    resolution: {integrity: sha512-X5RhD7f7b78pH2abbuusObSGgII5l54OdusS/2iXljN7WN1cel6ToLlZeCZcyxx9cR4wmBGQYGongIttDYNmAA==}
+    engines: {node: '>=14', npm: '>=7'}
+    peerDependencies:
+      react: '>=16.x <=18.x'
+      react-dom: '>=16.x <=18.x'
+
+  next-mdx-remote@4.4.1:
+    resolution: {integrity: sha512-1BvyXaIou6xy3XoNF4yaMZUCb6vD2GTAa5ciOa6WoO+gAUTYsb1K4rI/HSC2ogAWLrb/7VSV52skz07vOzmqIQ==}
+    engines: {node: '>=14', npm: '>=7'}
+    peerDependencies:
+      react: '>=16.x <=18.x'
+      react-dom: '>=16.x <=18.x'
+
   next-mdx-remote@6.0.0:
     resolution: {integrity: sha512-cJEpEZlgD6xGjB4jL8BnI8FaYdN9BzZM4NwadPe1YQr7pqoWjg9EBCMv3nXBkuHqMRfv2y33SzUsuyNh9LFAQQ==}
     engines: {node: '>=14', npm: '>=7'}
@@ -17171,6 +17196,9 @@ packages:
   vfile-location@4.1.0:
     resolution: {integrity: sha512-YF23YMyASIIJXpktBa4vIGLJ5Gs88UB/XePgqPmTa7cDA+JeO3yclbpheQYCHjVHBn/yePzrXuygIL+xbvRYHw==}
 
+  vfile-matter@3.0.1:
+    resolution: {integrity: sha512-CAAIDwnh6ZdtrqAuxdElUqQRQDQgbbIrYtDYI8gCjXS1qQ+1XdLoK8FIZWxJwn0/I+BkSSZpar3SOgjemQz4fg==}
+
   vfile-matter@5.0.1:
     resolution: {integrity: sha512-o6roP82AiX0XfkyTHyRCMXgHfltUNlXSEqCIS80f+mbAyiQBE2fxtDVMtseyytGx75sihiJFo/zR6r/4LTs2Cw==}
 
@@ -19225,12 +19253,22 @@ snapshots:
 
   '@code-hike/lighter@0.6.4': {}
 
+  '@code-hike/lighter@0.7.0': {}
+
   '@code-hike/mdx@0.8.3(encoding@0.1.13)(react@18.2.0)':
     dependencies:
       '@code-hike/lighter': 0.6.4
       node-fetch: 2.7.0(encoding@0.1.13)
       react: 18.2.0
       shiki: 0.10.1
+    transitivePeerDependencies:
+      - encoding
+
+  '@code-hike/mdx@0.9.0(encoding@0.1.13)(react@18.2.0)':
+    dependencies:
+      '@code-hike/lighter': 0.7.0
+      node-fetch: 2.7.0(encoding@0.1.13)
+      react: 18.2.0
     transitivePeerDependencies:
       - encoding
 
@@ -23518,6 +23556,8 @@ snapshots:
   '@types/js-cookie@3.0.4': {}
 
   '@types/js-levenshtein@1.1.1': {}
+
+  '@types/js-yaml@4.0.9': {}
 
   '@types/jsdom@20.0.1':
     dependencies:
@@ -32163,6 +32203,28 @@ snapshots:
 
   next-compose-plugins@2.2.1: {}
 
+  next-mdx-remote@4.2.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0):
+    dependencies:
+      '@mdx-js/mdx': 2.3.0
+      '@mdx-js/react': 2.3.0(react@18.2.0)
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+      vfile: 5.3.7
+      vfile-matter: 3.0.1
+    transitivePeerDependencies:
+      - supports-color
+
+  next-mdx-remote@4.4.1(react-dom@18.2.0(react@18.2.0))(react@18.2.0):
+    dependencies:
+      '@mdx-js/mdx': 2.3.0
+      '@mdx-js/react': 2.3.0(react@18.2.0)
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+      vfile: 5.3.7
+      vfile-matter: 3.0.1
+    transitivePeerDependencies:
+      - supports-color
+
   next-mdx-remote@6.0.0(@types/react@18.2.28)(react@18.2.0):
     dependencies:
       '@babel/code-frame': 7.29.0
@@ -36793,6 +36855,12 @@ snapshots:
     dependencies:
       '@types/unist': 2.0.8
       vfile: 5.3.7
+
+  vfile-matter@3.0.1:
+    dependencies:
+      '@types/js-yaml': 4.0.9
+      is-buffer: 2.0.5
+      js-yaml: 4.1.0
 
   vfile-matter@5.0.1:
     dependencies:
