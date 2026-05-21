@@ -38,7 +38,7 @@
   "devDependencies": {
     "@emotion/babel-plugin": "^11.3.0",
     "@emotion/babel-preset-css-prop": "^11.2.0",
-    "@skillrecordings/scripts": "^0.0.7",
+    "@skillrecordings/scripts": "workspace:*",
     "@skillrecordings/tsconfig": "^0.0.7",
     "@skillrecordings/types": "^0.0.7",
     "@testing-library/jest-dom": "^5.15.0",

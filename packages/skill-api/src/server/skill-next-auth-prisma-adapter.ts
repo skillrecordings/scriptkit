@@ -5,10 +5,10 @@ import {addSeconds, isAfter} from 'date-fns'
 export function PrismaAdapter(p: PrismaClient): Adapter {
   return {
     // @ts-ignore
-    createUser: (data) => p.user.create({data}),
+    createUser: (data: any) => p.user.create({data}),
     getUser: (id) => p.user.findUnique({where: {id}}),
     getUserByEmail: (email) => p.user.findUnique({where: {email}}),
-    async getUserByAccount(provider_providerAccountId) {
+    async getUserByAccount(provider_providerAccountId: any) {
       const account = await p.account.findUnique({
         where: {provider_providerAccountId},
         select: {user: true},
@@ -18,8 +18,8 @@ export function PrismaAdapter(p: PrismaClient): Adapter {
     // @ts-ignore
     updateUser: ({id, ...data}) => p.user.update({where: {id}, data}),
     deleteUser: (id) => p.user.delete({where: {id}}),
-    linkAccount: (data) => p.account.create({data}) as any,
-    unlinkAccount: (provider_providerAccountId) =>
+    linkAccount: (data: any) => p.account.create({data}) as any,
+    unlinkAccount: (provider_providerAccountId: any) =>
       p.account.delete({where: {provider_providerAccountId}}) as any,
     // @ts-ignore
     async getSessionAndUser(sessionToken) {
