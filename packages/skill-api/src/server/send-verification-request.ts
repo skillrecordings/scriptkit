@@ -172,7 +172,7 @@ function defaultHtml({url, host, email}: HTMLEmailParams, theme: Theme) {
     </mj-section>
   </mj-body>
 </mjml>
-`)
+`) as any
 
   return html
 }
