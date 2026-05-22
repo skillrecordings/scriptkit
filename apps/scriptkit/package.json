@@ -175,7 +175,7 @@
     "tailwindcss-radix": "^2.8.0",
     "tree-cli": "^0.6.7",
     "twitter-lite": "^1.1.0",
-    "uuid": "^9.0.0",
+    "uuid": "^14.0.0",
     "yup": "^0.32.11",
     "zod": "^3.21.4"
   },
