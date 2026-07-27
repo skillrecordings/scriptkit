@@ -97,7 +97,7 @@
     "next-auth": "^4.23.2",
     "nodemailer": "^6.7.2",
     "nodemailer-postmark-transport": "^5.2.1",
-    "postcss": "^8.4.14",
+    "postcss": "^8.5.18",
     "postcss-cli": "^9.0.2",
     "react": "18.2.0",
     "react-dom": "18.2.0",
