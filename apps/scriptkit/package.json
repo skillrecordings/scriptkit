@@ -126,7 +126,7 @@
     "memoizee": "^0.4.15",
     "memoizerific": "^1.11.3",
     "micromark": "^3.1.0",
-    "mjml": "^4.12.0",
+    "mjml": "^5.0.0",
     "next": "^13.5.4",
     "next-auth": "^4.23.2",
     "next-mdx-remote": "^6.0.0",

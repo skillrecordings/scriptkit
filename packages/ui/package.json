@@ -91,7 +91,7 @@
     "js-cookie": "^3.0.1",
     "lodash": "^4.17.21",
     "lucide-react": "^0.224.0",
-    "mjml": "^4.12.0",
+    "mjml": "^5.0.0",
     "mjml-react": "^2.0.8",
     "next": "^13.5.4",
     "next-auth": "^4.23.2",
